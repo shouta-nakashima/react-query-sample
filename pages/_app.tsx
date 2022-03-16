@@ -9,12 +9,12 @@ const queryClient = new QueryClient({
     queries: {
       retry:false,
       refetchOnWindowFocus:false,
-      staleTime: 30000
+      staleTime: 30000 //デフォルトのstaleTimeを設定
     }
   }
 })
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <Component {...pageProps} />

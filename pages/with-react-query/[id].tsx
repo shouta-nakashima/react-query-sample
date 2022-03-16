@@ -21,7 +21,7 @@ const WithReactQueryUser = () => {
     return values
   })
 
-  const {data,isLoading,isError} = useQuery(['user',userId],() =>fetchUser(userId),{ enabled: !!userId })
+  const {data,isLoading,isError} =  useQuery(['user',userId],() =>fetchUser(userId ? userId:''),{ enabled: !!userId })
   if(isLoading) return <p className={styles.loading}>Loading...</p>
   if(isError) return <p className={styles.error}>Network Error</p>
   return (

@@ -31,7 +31,7 @@ const WithUseEffectUser = () => {
 
   useEffect ( () => {
     setLoading(true)
-    fetchUser(userId)
+    fetchUser(userId ? userId:'')
       .then((res) => {
         setUser(res)
         setLoading(false)
